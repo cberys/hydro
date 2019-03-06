@@ -1,0 +1,436 @@
+netcdf example_cchdo {
+dimensions:
+	N_PROF = 3 ;
+	N_LEVEL = 36 ;
+	N_WAVELENGTH0 = 3 ;
+variables:
+	double pressure(N_PROF, N_LEVEL) ;
+		pressure:_FillValue = NaN ;
+		pressure:standard_name = "sea_water_pressure" ;
+		pressure:units = "dbar" ;
+		pressure:axis = "Z" ;
+		pressure:positive = "down" ;
+		pressure:whp_name = "CTDPRS" ;
+		pressure:whp_unit = "DBAR" ;
+	double latitude(N_PROF) ;
+		latitude:_FillValue = NaN ;
+		latitude:standard_name = "latitude" ;
+		latitude:units = "degrees_north" ;
+		latitude:axis = "Y" ;
+	double longitude(N_PROF) ;
+		longitude:_FillValue = NaN ;
+		longitude:standard_name = "latitude" ;
+		longitude:units = "degrees_east" ;
+		longitude:axis = "X" ;
+	int64 date(N_PROF) ;
+		date:standard_name = "time" ;
+		date:axis = "T" ;
+		date:units = "minutes since 2016-02-19 05:57:00" ;
+		date:calendar = "proleptic_gregorian" ;
+	int64 wavelength0(N_WAVELENGTH0) ;
+		wavelength0:standard_name = "radiation_wavelength" ;
+		wavelength0:units = "nm" ;
+	double var0(N_PROF, N_LEVEL) ;
+		var0:_FillValue = NaN ;
+		var0:standard_name = "moles_of_oxygen_per_unit_mass_in_sea_water" ;
+		var0:units = "umol kg-1" ;
+		var0:whp_name = "OXYGEN" ;
+		var0:whp_unit = "UMOL/KG" ;
+		var0:creator_name = "Swift, James" ;
+		var0:creator_email = "jswift@ucsd.edu" ;
+		var0:creator_institution = "Scripps Institution of Oceanography" ;
+		var0:geospatial_bounds = "MULTIPOINT ((78.3815 -66.6027), (78.2986 -66.4997), (78.0102 -66.15))" ;
+		var0:geospatial_lat_min = -66.6027 ;
+		var0:geospatial_lat_max = -66.15 ;
+		var0:geospatial_lon_min = 78.0102 ;
+		var0:geospatial_lon_max = 78.3815 ;
+		var0:creator_type = "person" ;
+		var0:program = "GO-SHIP" ;
+		string var0:contributor_name = "Barna, Andrew", "Becker, Susan" ;
+		string var0:contributor_role = "Shipboard Tech", "Shipboard Tech" ;
+		var0:geospatial_lat_units = "degrees_north" ;
+		var0:geospatial_lon_units = "degrees_east" ;
+		var0:date_issued = "2016-04-12" ;
+		var0:ancillary_variables = "var1" ;
+		var0:coordinates = "var9 var7 longitude var8 var6 date pressure latitude" ;
+	byte var1(N_PROF, N_LEVEL) ;
+		var1:_FillValue = 9b ;
+		var1:standard_name = "moles_of_oxygen_per_unit_mass_in_sea_water status_flag" ;
+		var1:whp_name = "OXYGEN_FLAG_W" ;
+		var1:flag_values = "1b 2b 3b 4b 5b 6b 7b 8b 9b" ;
+		var1:flag_meanings = "def1 def2 def3 def4 def5 def6 def7 def8 def9" ;
+		var1:coordinates = "var9 var7 longitude var8 var6 date pressure latitude" ;
+	double var2(N_PROF, N_LEVEL) ;
+		var2:_FillValue = NaN ;
+		var2:standard_name = "sea_water_ph_reported_on_total_scale" ;
+		var2:units = "1" ;
+		var2:whp_name = "PH_TOT" ;
+		var2:creator_name = "Dickson, Andrew" ;
+		var2:creator_email = "adickson@ucsd.edu" ;
+		var2:creator_institution = "Scripps Institution of Oceanography" ;
+		var2:geospatial_bounds = "MULTIPOINT ((78.2986 -66.4997), (78.0102 -66.15))" ;
+		var2:geospatial_lat_min = -66.4997 ;
+		var2:geospatial_lat_max = -66.15 ;
+		var2:geospatial_lon_min = 78.0102 ;
+		var2:geospatial_lon_max = 78.2986 ;
+		var2:creator_type = "person" ;
+		var2:program = "GO-SHIP" ;
+		string var2:contributor_name = "Belmonte, Manuel", "Cervantes, David" ;
+		string var2:contributor_role = "Shipboard Tech", "Shipboard Tech" ;
+		var2:geospatial_lat_units = "degrees_north" ;
+		var2:geospatial_lon_units = "degrees_east" ;
+		var2:date_issued = "2016-04-12" ;
+		var2:ancillary_variables = "var3" ;
+		var2:coordinates = "var9 var7 longitude var8 var6 date pressure latitude" ;
+	byte var3(N_PROF, N_LEVEL) ;
+		var3:_FillValue = 9b ;
+		var3:standard_name = "sea_water_ph_reported_on_total_scale status_flag" ;
+		var3:whp_name = "PH_TOT_FLAG_W" ;
+		var3:flag_values = "1b 2b 3b 4b 5b 6b 7b 8b 9b" ;
+		var3:flag_meanings = "def1 def2 def3 def4 def5 def6 def7 def8 def9" ;
+		var3:coordinates = "var9 var7 longitude var8 var6 date pressure latitude" ;
+	double var4(N_PROF, N_LEVEL, N_WAVELENGTH0) ;
+		var4:_FillValue = NaN ;
+		var4:standard_name = "volume_beam_attenuation_coefficient_of_radiative_flux_in_sea_water_due_to_colored_dissolved_organic_matter" ;
+		var4:units = "m-1" ;
+		var4:whp_name = "CDOM{wavelength0}" ;
+		var4:whp_unit = "1/M" ;
+		var4:creator_name = "Kosei Sasaoka" ;
+		var4:creator_email = "sasaoka@jamstec.go.jp" ;
+		var4:creator_institution = "Japan Agency for Marine-Earth Science and Technology" ;
+		var4:creator_type = "person" ;
+		var4:geospatial_bounds = "MULTIPOINT ((78.0102 -66.15))" ;
+		var4:geospatial_lat_min = -66.15 ;
+		var4:geospatial_lat_max = -66.15 ;
+		var4:geospatial_lon_min = 78.0102 ;
+		var4:geospatial_lon_max = 78.0102 ;
+		var4:program = "GO-SHIP" ;
+		var4:geospatial_lat_units = "degrees_north" ;
+		var4:geospatial_lon_units = "degrees_east" ;
+		var4:date_issued = "2016-04-12" ;
+		var4:ancillary_variables = "var5" ;
+		var4:coordinates = "var9 var7 longitude var8 wavelength0 var6 date pressure latitude" ;
+	byte var5(N_PROF, N_LEVEL, N_WAVELENGTH0) ;
+		var5:_FillValue = 9b ;
+		var5:standard_name = "volume_beam_attenuation_coefficient_of_radiative_flux_in_sea_water_due_to_colored_dissolved_organic_matter status_flag" ;
+		var5:whp_name = "CDOM{wavelength0}_FLAG_W" ;
+		var5:flag_values = "1b 2b 3b 4b 5b 6b 7b 8b 9b" ;
+		var5:flag_meanings = "def1 def2 def3 def4 def5 def6 def7 def8 def9" ;
+		var5:coordinates = "var9 var7 longitude var8 wavelength0 var6 date pressure latitude" ;
+	string var6(N_PROF) ;
+		var6:whp_name = "EXPOCODE" ;
+	string var7(N_PROF) ;
+		var7:whp_name = "STNNBR" ;
+	int64 var8(N_PROF) ;
+		var8:whp_name = "CASTNO" ;
+	string var9(N_PROF) ;
+		var9:whp_name = "SECT_ID" ;
+
+// global attributes:
+		:Conventions = "CF-1.7 ACDD-1.3 CCHDO-0.0" ;
+		:title = "CCHDO netCDF example file" ;
+		:warning = "The data are not real, this is only a file to demo features of the work in progress" ;
+		:creator_name = "\"Swift, James\",\"Dickson, Andrew\",\"Kosei Sasaoka\"" ;
+		:creator_email = "\"jswift@ucsd.edu\",\"adickson@ucsd.edu\",\"sasaoka@jamstec.go.jp\"" ;
+		:creator_institution = "\"Scripps Institution of Oceanography\",\"Scripps Institution of Oceanography\",\"Japan Agency for Marine-Earth Science and Technology\"" ;
+		:creator_type = "\"person\",\"person\",\"person\"" ;
+		:contributor_name = "\"Belmonte, Manuel\",\"Barna, Andrew\",\"Cervantes, David\",\"Becker, Susan\"" ;
+		:contributor_role = "\"Shipboard Tech\",\"Shipboard Tech\",\"Shipboard Tech\",\"Shipboard Tech\"" ;
+		:geospatial_bounds = "MULTIPOINT ((78.3815 -66.6027), (78.2986 -66.4997), (78.0102 -66.15))" ;
+		:geospatial_lat_min = -66.6027 ;
+		:geospatial_lat_max = -66.15 ;
+		:geospatial_lon_min = 78.0102 ;
+		:geospatial_lon_max = 78.3815 ;
+		:program = "GO-SHIP" ;
+		:geospatial_lat_units = "degrees_north" ;
+		:geospatial_lon_units = "degrees_east" ;
+		:date_issued = "2016-04-12" ;
+data:
+
+ pressure =
+  5.5, 10.9, 19.8, 40.3, 65.8, 89.9, 114.8, 140.2, 166.6, 190.5, 214.7, 
+    240.1, 264.6, 289.5, 315.5, 340.6, 365.5, 390.2, 454.4, 454.6, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _, _, _,
+  5.4, 13.7, 24.1, 50.6, 75.3, 99.9, 125.6, 150.5, 175.2, 200.1, 225.9, 
+    256.1, 301.4, 352.3, 399.6, 450.3, 509, 599.3, 699.3, 800.9, 933.9, 
+    934.3, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+  5.7, 35.7, 59.8, 84.2, 112.6, 135.8, 160.6, 185.5, 210.6, 234.8, 264.2, 
+    314.7, 364.9, 415, 462.3, 532.8, 632, 732.5, 833.6, 932.2, 1034.3, 
+    1134.4, 1233.4, 1335.2, 1431.7, 1533.4, 1630.8, 1732.9, 1835.6, 1935.2, 
+    2057.3, 2260.3, 2461.3, 2664.5, 2819.1, 3025.5 ;
+
+ latitude = -66.6027, -66.4997, -66.15 ;
+
+ longitude = 78.3815, 78.2986, 78.0102 ;
+
+ date = 0, 222, 1309 ;
+
+ wavelength0 = 325, 370, 443 ;
+
+ var0 =
+  348.7, 348.2, 349, 313.7, 303.9, 305.8, 302, 300.3, 296.4, 302.8, 300.9, 
+    304.9, 304, 302.7, 294.4, 293, 284.2, 270.4, 262.9, _, _, _, _, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _,
+  350.4, 347.1, 324.5, 311.9, 311.6, 312, 314.4, 313.9, 314.4, 313.4, 306.7, 
+    300.8, 306.5, 301.1, 281.6, 269.3, 258.1, 242.9, 227.9, 226.2, 223.8, 
+    221.9, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+  350.7, 311.3, 302.8, 303.5, 304.7, 303.2, 302.6, 309.1, 297.3, 300, 302.3, 
+    298.5, 293.1, 278, 266.7, 243.9, 230.2, 223.5, 218.7, 221.7, 220.8, 
+    221.9, 224, 222.6, 225.2, 225.3, 226.3, 228.3, 228.3, 230.3, 231, 230.7, 
+    230.4, 232, 232.6, 231.9 ;
+
+ var1 =
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, _, _, _, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _,
+  2, 3, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ;
+
+ var2 =
+  _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _,
+  7.7013, 7.6967, _, 7.6199, _, 7.6148, _, 7.6183, _, 7.6176, _, 7.6091, _, 
+    7.6071, _, 7.5962, _, 7.5934, _, 7.5934, 7.5939, _, _, _, _, _, _, _, _, 
+    _, _, _, _, _, _, _,
+  7.7209, _, 7.6127, _, 7.6132, _, 7.6114, 7.6152, _, 7.6092, 7.6089, 7.6059, 
+    _, 7.5975, _, 7.5916, _, 7.5926, _, 7.5935, _, 7.593, _, 7.5924, _, 
+    7.592, 7.5923, 7.5919, 7.5913, 7.5916, _, 7.5925, _, 7.5915, 7.5915, 
+    7.5936 ;
+
+ var3 =
+  _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _,
+  6, 2, _, 2, _, 2, _, 6, _, 6, _, 6, _, 2, _, 2, _, 6, _, 2, 6, _, _, _, _, 
+    _, _, _, _, _, _, _, _, _, _, _,
+  2, _, 2, _, 2, _, 2, 6, _, 2, 2, 2, _, 2, _, 2, _, 6, _, 6, _, 6, _, 2, _, 
+    2, 2, 2, 2, 2, _, 6, _, 6, 2, 3 ;
+
+ var4 =
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  0.19, 0.104, 0.05,
+  0.143, 0.07, 0.032,
+  0.101, 0.05, 0.02,
+  _, _, _,
+  0.132, 0.064, 0.024,
+  _, _, _,
+  _, _, _,
+  0.193, 0.106, 0.048,
+  _, _, _,
+  0.166, 0.084, 0.033,
+  _, _, _,
+  0.149, 0.068, 0.026,
+  _, _, _,
+  0.149, 0.074, 0.029,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  0.147, 0.075, 0.035,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _ ;
+
+ var5 =
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  1, 1, 1,
+  1, 1, 1,
+  1, 1, 1,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  1, 1, 1,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _,
+  _, _, _ ;
+
+ var6 = "33RR20160208", "33RR20160208", "33RR20160208" ;
+
+ var7 = "1", "2", "6" ;
+
+ var8 = 1, 3, 1 ;
+
+ var9 = "I08S", "I08S", "I08S" ;
+}
