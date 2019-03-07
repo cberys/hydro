@@ -1,4 +1,4 @@
-netcdf example_cchdo {
+netcdf example_cchdo_utf8 {
 dimensions:
 	N_PROF = 3 ;
 	N_LEVEL = 36 ;
@@ -94,7 +94,7 @@ variables:
 		var4:ancillary_variables = "var5" ;
 		var4:creator_email = "sasaoka@jamstec.go.jp" ;
 		var4:creator_institution = "Japan Agency for Marine-Earth Science and Technology" ;
-		var4:creator_name = "Kosei Sasaoka" ;
+		string var4:creator_name = "笹岡 晃征 (Kosei Sasaoka)" ;
 		var4:creator_type = "person" ;
 		var4:date_issued = "2016-04-12" ;
 		var4:geospatial_bounds = "MULTIPOINT ((78.0102 -66.15))" ;
@@ -131,9 +131,9 @@ variables:
 		:Conventions = "CF-1.7 ACDD-1.3 CCHDO-0.0" ;
 		:contributor_name = "\"Becker, Susan\",\"Barna, Andrew\",\"Cervantes, David\",\"Belmonte, Manuel\"" ;
 		:contributor_role = "\"Shipboard Tech\",\"Shipboard Tech\",\"Shipboard Tech\",\"Shipboard Tech\"" ;
-		:creator_email = "\"sasaoka@jamstec.go.jp\",\"jswift@ucsd.edu\",\"adickson@ucsd.edu\"" ;
-		:creator_institution = "\"Japan Agency for Marine-Earth Science and Technology\",\"Scripps Institution of Oceanography\",\"Scripps Institution of Oceanography\"" ;
-		:creator_name = "\"Kosei Sasaoka\",\"Swift, James\",\"Dickson, Andrew\"" ;
+		:creator_email = "\"jswift@ucsd.edu\",\"adickson@ucsd.edu\",\"sasaoka@jamstec.go.jp\"" ;
+		:creator_institution = "\"Scripps Institution of Oceanography\",\"Scripps Institution of Oceanography\",\"Japan Agency for Marine-Earth Science and Technology\"" ;
+		string :creator_name = "\"Swift, James\",\"Dickson, Andrew\",\"笹岡 晃征 (Kosei Sasaoka)\"" ;
 		:creator_type = "\"person\",\"person\",\"person\"" ;
 		:date_issued = "2016-04-12" ;
 		:geospatial_bounds = "MULTIPOINT ((78.3815 -66.6027), (78.2986 -66.4997), (78.0102 -66.15))" ;
